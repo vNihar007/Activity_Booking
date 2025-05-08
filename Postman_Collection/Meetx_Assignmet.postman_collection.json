@@ -186,6 +186,72 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Render-requests",
+			"item": [
+				{
+					"name": "get all activites",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://meetx-activity-booking.onrender.com/api/activities",
+							"protocol": "https",
+							"host": [
+								"meetx-activity-booking",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"activities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create an activity",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MWQwN2NkNTczMDZkZjY0NDk4Y2MzNiIsIm5hbWUiOiJQYWRtYSIsImlhdCI6MTc0NjczMzM3NSwiZXhwIjoxNzQ2OTA2MTc1fQ.sgKcjG0r91TF772hOVDLsrzSSXFO-L_Xxwk5iGd3miw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Yoga Workshop\",\n  \"description\": \"A relaxing morning yoga session for all levels.\",\n  \"location\": \"Community Hall\",\n  \"date\": \"2025-05-10\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://meetx-activity-booking.onrender.com/api/activities",
+							"protocol": "https",
+							"host": [
+								"meetx-activity-booking",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"activities"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
