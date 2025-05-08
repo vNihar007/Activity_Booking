@@ -1,0 +1,191 @@
+{
+	"info": {
+		"_postman_id": "997d7614-a9ce-4d89-ab68-ddfed819ec7b",
+		"name": "Meetx_Assignmet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40469516"
+	},
+	"item": [
+		{
+			"name": "auth-Routes",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/auth/register",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UserLogin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"Padma@gmail.com\",\n    \"password\":\"Padma123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "activities-Routes",
+			"item": [
+				{
+					"name": "Create activity",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MWQwN2NkNTczMDZkZjY0NDk4Y2MzNiIsIm5hbWUiOiJQYWRtYSIsImlhdCI6MTc0NjczMzM3NSwiZXhwIjoxNzQ2OTA2MTc1fQ.sgKcjG0r91TF772hOVDLsrzSSXFO-L_Xxwk5iGd3miw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Doing Assignment\",\n  \"description\": \"MeetX Assignment\",\n  \"location\": \"MY_HOME\",\n  \"date\": \"2025-03-22\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/activities/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"activities",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Activities",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/activities/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"activities",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "bookings-Routes",
+			"item": [
+				{
+					"name": "book-activity",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MWQwN2NkNTczMDZkZjY0NDk4Y2MzNiIsIm5hbWUiOiJQYWRtYSIsImlhdCI6MTc0NjczMzM3NSwiZXhwIjoxNzQ2OTA2MTc1fQ.sgKcjG0r91TF772hOVDLsrzSSXFO-L_Xxwk5iGd3miw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/bookings/:activityId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"bookings",
+								":activityId"
+							],
+							"variable": [
+								{
+									"key": "activityId",
+									"value": "681d1090c02099ff62488836"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "My activities",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/bookings/my",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"bookings",
+								"my"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
